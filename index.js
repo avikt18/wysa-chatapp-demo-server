@@ -6,7 +6,7 @@ import userRoute from './routes/userRoutes.js'
 import themeRoute from './routes/themeRoutes.js'
 
 const app = express()
-dotenv.config({path:__dirname+'/.env'});
+dotenv.config()
 app.use(express.json())
 app.use(cors())
 const PORT = process.env.PORT || 4000
