@@ -12,20 +12,26 @@ export const setTheme = async (req, res) => {
             message: 'Invalid id'
         })
     }
+    // const newTheme = new Theme({
+    //     backgroundColor,
+    //     bubbleColor
+    // })
     try {
-         await User.updateOne(
-        { _id: id },
-        { $set: { theme: { backgroundColor, bubbleColor } } },
-    )
-    return res.status(200).json({
-        status: 'success',
-        message: 'Theme set successfully'
-    })
+        console.log(id);
+        const upd = await User.updateOne(
+            { _id: id },
+            { $set: { theme: { backgroundColor, bubbleColor } } },
+        )
+        
+        return res.status(200).json({
+            status: 'success',
+            message: 'Theme set successfully'
+        })
     } catch (error) {
         console.log(error)
         res.status(400).json(error)
     }
-   
+
 }
 
 export const setPublicThemes = async (req, res) => {

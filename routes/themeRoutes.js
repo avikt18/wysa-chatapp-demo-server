@@ -4,6 +4,6 @@ import { getPublicThemes, setPublicThemes } from '../controllers/themeController
 const router = express.Router()
 
 router.get('/theme', getPublicThemes) // pre-avaliable public themes 
-router.post('/theme',setPublicThemes) // pre-avaliable public themes 
+router.post('/theme',setPublicThemes) // pre-avaliable public themes (only for admins)
 
 export default router
